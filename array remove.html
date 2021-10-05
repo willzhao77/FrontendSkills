@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="array-remove">
+            <h1>Array remove operation</h1>
+            <div class="display-area">
+                <label for="">Original Array:</label>
+                <p>numbers = {{ numbersOneToTen }}</p>
+    
+                <label for="">Return value (after method):</label>
+                <p>{{ newNumber }}</p>
+            </div>
+            <div class="methods">
+                <div class="method">
+                    <p>numbers.filter(num => num % 2 === 0)</p>
+                    <button @click="showEven">New Numbers</button>
+                </div>
+                <div class="method">
+                    <p>numbers.slice(3, 8):</p>
+                    <button @click="showSlice">New Numbers</button>
+                </div>
+                <div class="method addbg">
+                    <p>numbers.splice(4):</p>
+                    <button @click="showSplice">New Numbers</button>
+                </div>
+                <div class="method addbg">
+                    <p>numbers.pop():</p>
+                    <button @click="showPop">New Numbers</button>
+                </div>
+                <div class="method addbg">
+                    <p>numbers = []</p>
+                    <button @click="showEmpty">New Numbers</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            numbersOneToTen : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            newNumber: [],
+        },
+        methods: {
+            showEven () {
+                // now we want to remain with even numbers from the above array
+                this.newNumber = this.numbersOneToTen.filter(num => num % 2 === 0)
+            },
+
+            showSlice() {
+                // now we want to remain with even numbers from the above array
+                this.newNumber = this.numbersOneToTen.slice(3, 8)
+            },
+            showSplice() {
+                // now we want to remain with even numbers from the above array
+                this.newNumber = this.numbersOneToTen.splice(4)
+            },
+            showPop() {
+                // now we want to remain with even numbers from the above array
+                this.newNumber = this.numbersOneToTen.pop()
+            },
+            showEmpty() {
+
+                // now we want to remain with even numbers from the above array
+                this.numbersOneToTen = []
+            }
+
+
+
+
+        }
+    })
+</script>
+<style>
+.array-remove {
+    border: 1px solid blue
+}
+.display-area {
+    margin: 0 auto;
+}
+.methods {
+    display: flex;
+}
+.method {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid blue;
+}
+.addbg {
+    background-color: wheat;
+}
+</style>
+</html>

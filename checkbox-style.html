@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>This is modified checkbox based below sample.</h1>
+        <div class="checkboxgroup">
+            <div>
+                <label for="">Label: <input type="checkbox" class="checkv1" /></label>
+            </div>
+            <div>
+                <label for="">Label: <input type="checkbox" class="checkv1" /></label>
+            </div>
+            <div>
+                <label for="">Label: <input type="checkbox" class="checkv1" /></label>
+            </div>
+            <div>
+                <label for="">Label: <input type="checkbox" class="checkv1" /></label>
+            </div>
+            <div>
+                <label for="">Label: <input type="checkbox" class="checkv1" /></label>
+            </div>
+        </div>
+        <hr>
+
+        <h1>This is sample checkbox.</h1>
+        <p>https://stackoverflow.com/questions/4148499/how-to-style-a-checkbox-using-css</p>
+        <p>http://jsfiddle.net/YMuPw/15/</p>
+        <table style="width:100%">
+            <tr>
+                <td>Normal:</td>
+                <td><input type="checkbox" /></td>
+                <td><input type="checkbox" checked="checked" /></td>
+                <td><input type="checkbox" disabled="disabled" /></td>
+                <td><input type="checkbox" disabled="disabled" checked="checked" /></td>
+            </tr>
+            <tr>
+                <td>Small:</td>
+                <td><input type="checkbox" class="myinput" /></td>
+                <td><input type="checkbox" checked="checked" class="myinput" /></td>
+                <td><input type="checkbox" disabled="disabled" class="myinput" /></td>
+                <td><input type="checkbox" disabled="disabled" checked="checked" class="myinput" /></td>
+            </tr>
+            <tr>
+                <td>Large:</td>
+                <td><input type="checkbox" class="myinput large" /></td>
+                <td><input type="checkbox" checked="checked" class="myinput large" /></td>
+                <td><input type="checkbox" disabled="disabled" class="myinput large" /></td>
+                <td><input type="checkbox" disabled="disabled" checked="checked" class="myinput large" /></td>
+            </tr>
+            <tr>
+                <td>Custom icon:</td>
+                <td><input type="checkbox" class="myinput large custom" /></td>
+                <td><input type="checkbox" checked="checked" class="myinput large custom" /></td>
+                <td><input type="checkbox" disabled="disabled" class="myinput large custom" /></td>
+                <td><input type="checkbox" disabled="disabled" checked="checked" class="myinput large custom" /></td>
+            </tr>
+        </table>
+
+
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+
+        .container {
+            margin: 0 auto;
+            width: 80%;
+        }
+        .checkboxgroup {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+
+
+
+
+
+        /* modified checkbox CSS */
+        /* set original checkbox*/
+        .checkv1{
+            height:20px;
+            width: 20px;
+            position: relative;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            -o-appearance:none;
+        }
+
+        /* Cover input box. we don't use it.*/
+        .checkv1[type="checkbox"]:before{
+            box-sizing: border-box;
+            display: block;
+            width: 25px;
+            height: 25px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: green;
+            content: "";
+            border-radius: 5px;
+        }
+
+        /* set the style to display when checked. */
+        .checkv1[type="checkbox"]:checked:after{
+            content: "";
+            box-sizing: border-box;
+            display: inline-block;
+            position: absolute;
+            left: 9px;
+            top: 12px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 8px;
+            border-bottom: 3px solid green;
+            border-right: 3px solid green;
+        }          
+        
+        
+
+        
+
+        /* sample checkbox CSS */
+        /* Main Classes */
+        .myinput {
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            -o-appearance:none;
+        }
+        .myinput[type="checkbox"]:before{
+            position: relative;
+            display: block;
+            width: 11px;
+            height: 11px;
+            border: 1px solid #808080;
+            content: "";
+            background: #FFF;
+        }
+        .myinput[type="checkbox"]:after{
+            position: relative;
+            display: block;
+            left: 2px;
+            top: -11px;
+            width: 7px;
+            height: 7px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #B3B3B3 #dcddde #dcddde #B3B3B3;
+            content: "";
+            background-image: linear-gradient(135deg, #B1B6BE 0%,#FFF 100%);
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+        .myinput[type="checkbox"]:checked:after{
+            background-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC'), linear-gradient(135deg, #B1B6BE 0%,#FFF 100%);
+        }
+        .myinput[type="checkbox"]:disabled:after{
+            -webkit-filter: opacity(0.4);
+        }
+        .myinput[type="checkbox"]:not(:disabled):checked:hover:after{
+            background-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC'), linear-gradient(135deg, #8BB0C2 0%,#FFF 100%);
+        }
+        .myinput[type="checkbox"]:not(:disabled):hover:after{
+            background-image: linear-gradient(135deg, #8BB0C2 0%,#FFF 100%);  
+            border-color: #85A9BB #92C2DA #92C2DA #85A9BB;  
+        }
+        .myinput[type="checkbox"]:not(:disabled):hover:before{
+            border-color: #3D7591;
+        }
+        /* Large checkboxes */
+        .myinput.large{
+            height:22px;
+            width: 22px;
+        }
+
+        .myinput.large[type="checkbox"]:before{
+            width: 20px;
+            height: 20px;
+        }
+        .myinput.large[type="checkbox"]:after{
+            top: -20px;
+            width: 16px;
+            height: 16px;
+        }
+        /* Custom checkbox */
+        .myinput.large.custom[type="checkbox"]:checked:after{
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGHRFWHRBdXRob3IAbWluZWNyYWZ0aW5mby5jb23fZidLAAAAk0lEQVQ4y2P4//8/AyUYwcAD+OzN/oMwshjRBoA0Gr8+DcbIhhBlAEyz+qZZ/7WPryHNAGTNMOxpJvo/w0/uP0kGgGwGaZbrKgfTGnLc/0nyAgiDbEY2BCRGdCDCnA2yGeYVog0Aae5MV4c7Gzk6CRqAbDM2w/EaQEgzXgPQnU2SAcTYjNMAYm3GaQCxNuM0gFwMAPUKd8XyBVDcAAAAAElFTkSuQmCC'), linear-gradient(135deg, #B1B6BE 0%,#FFF 100%);
+        }
+        .myinput.large.custom[type="checkbox"]:not(:disabled):checked:hover:after{
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGHRFWHRBdXRob3IAbWluZWNyYWZ0aW5mby5jb23fZidLAAAAk0lEQVQ4y2P4//8/AyUYwcAD+OzN/oMwshjRBoA0Gr8+DcbIhhBlAEyz+qZZ/7WPryHNAGTNMOxpJvo/w0/uP0kGgGwGaZbrKgfTGnLc/0nyAgiDbEY2BCRGdCDCnA2yGeYVog0Aae5MV4c7Gzk6CRqAbDM2w/EaQEgzXgPQnU2SAcTYjNMAYm3GaQCxNuM0gFwMAPUKd8XyBVDcAAAAAElFTkSuQmCC'), linear-gradient(135deg, #8BB0C2 0%,#FFF 100%);
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+</body>
+</html>
